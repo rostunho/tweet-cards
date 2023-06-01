@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import Container from 'components/Container/Container';
 import Navigation from 'components/Navigation/Navigation';
@@ -9,7 +10,9 @@ export default function SharedLayout() {
         <Navigation />
         <h1> HEADER</h1>
       </header>
-      <Outlet />
+      <Suspense fallback={<p>... LOADING ...</p>}>
+        <Outlet />
+      </Suspense>
     </Container>
   );
 }
