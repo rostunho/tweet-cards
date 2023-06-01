@@ -1,14 +1,17 @@
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
+import { AppNavigation, List, Item, Link } from './Navigation.styled';
 
 export default function Navigation() {
   return (
-    <ul>
-      <li>
-        <NavLink to="/">HOME</NavLink>
-      </li>
-      <li>
-        <NavLink to="/tweets">TWEETS</NavLink>
-      </li>
-    </ul>
+    <AppNavigation>
+      <List>
+        <Item>
+          <Link to="/">HOME</Link>
+        </Item>
+        <Item>
+          <Link to="/tweets">TWEETS</Link>
+        </Item>
+      </List>
+    </AppNavigation>
   );
 }

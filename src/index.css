@@ -1,7 +1,11 @@
 @import-normalize;
 
+* {
+  box-sizing: border-box;
+}
+
 body {
-  margin: 0;
+  margin: 0;  
   background-color: #CCC;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -13,6 +17,19 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+header {
+  width: 1280px;
+  margin: 12px auto auto;
+  padding: 0 40px;
+}
+
+main {
+  width: 1280px;
+  height: 500px;
+  margin: 12px auto 0;
+  padding: 0 40px;
 }
 
 h1, h2, h3, h4, h5, h6 {
