@@ -1,3 +1,3 @@
 export default function TweetsPage() {
-  <h1>Tweets Page</h1>;
+  return <h1>Tweets Page</h1>;
 }
