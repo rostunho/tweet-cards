@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/917.6a100ca5.chunk.js","mappings":"wKAAe,SAASA,IACtB,OAAOC,EAAAA,EAAAA,KAAA,MAAAC,SAAI,eACb,C","sources":["pages/TweetsPage.jsx"],"sourcesContent":["export default function TweetsPage() {\n  return <h1>Tweets Page</h1>;\n}\n"],"names":["TweetsPage","_jsx","children"],"sourceRoot":""}
