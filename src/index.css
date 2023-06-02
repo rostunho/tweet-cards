@@ -19,18 +19,7 @@ code {
     monospace;
 }
 
-header {
-  width: 1280px;
-  margin: 12px auto auto;
-  padding: 0 40px;
-}
 
-main {
-  width: 1280px;
-  height: 500px;
-  margin: 12px auto 0;
-  padding: 0 40px;
-}
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;

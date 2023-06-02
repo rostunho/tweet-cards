@@ -1,3 +1,11 @@
+import TweetCard from 'components/TweetCard/TweetCard';
+
 export default function TweetsPage() {
-  return <h1>Tweets Page</h1>;
+  return (
+    <ul style={{ display: 'flex', justifyContent: 'space-between' }}>
+      <TweetCard />
+      <TweetCard />
+      <TweetCard />
+    </ul>
+  );
 }

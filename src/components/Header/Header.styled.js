@@ -5,7 +5,11 @@ export const AppHeader = styled.header`
   align-items: center;
   justify-content: flex-start;
 
+  width: 1280px;
   height: 108px;
+  margin: 12px auto auto;
+  padding: 0 40px;
+
   border-radius: 20px;
 
   background-color: rgb(71, 28, 169);
