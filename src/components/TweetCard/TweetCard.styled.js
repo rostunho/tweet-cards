@@ -1,17 +1,36 @@
-import styled from 'styled-components';
-import img1x from 'images/bg-image-1x.png';
-import img2x from 'images/bg-image-2x.png';
-import img3x from 'images/bg-image-3x.png';
+import styled, { css } from 'styled-components';
+import img1x from 'images/bg-image.png';
+import img2x from 'images/bg-image@2x.png';
 
 export const CardContainer = styled.div`
+  position: relative;
+
+  /* display: flex;
+  align-items: flex-end; */
+
   width: 380px;
   height: 460px;
-  padding: 20px;
+  padding: 20px 20px 36px;
 
   border-radius: 20px;
   background-repeat: no-repeat;
   background-position: 36px 28px, top right;
+  box-shadow: -2.5777px 6.87386px 20.6216px rgba(0, 0, 0, 0.23);
+
   background-image: url(${img1x}),
     linear-gradient(114.99deg, #471ca9 -0.99%, #5736a3 54.28%, #4b2a99 78.99%);
-  box-shadow: -2.5777px 6.87386px 20.6216px rgba(0, 0, 0, 0.23);
+
+  ${({ retina }) =>
+    retina &&
+    css`
+      background-image: url(${img2x}),
+        linear-gradient(
+          114.99deg,
+          #471ca9 -0.99%,
+          #5736a3 54.28%,
+          #4b2a99 78.99%
+        );
+
+      background-size: 308px 168px, 380px 460px;
+    `}
 `;
