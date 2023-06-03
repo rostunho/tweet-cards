@@ -1,48 +1,10 @@
-import styled, { keyframes } from 'styled-components';
-
-const fadeInToDown = keyframes`
-  from {
-    transform: translateY(-50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-`;
-
-const fadeInToRight = keyframes`
-  from {
-    transform: translateX(-50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0px);
-    opacity: 1;
-  }
-`;
-
-const lineFadeDown = keyframes`
-  from {
-    scale: 1 0;
-  }
-  to {
-    scale: 1 1;
-  }
-`;
-
-const fadeTextSpacing = keyframes`
-  from {
-    letter-spacing: 1px;
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    letter-spacing: 3px;
-    opacity: 1;
-    transform: translateX(0px);
-  }
-`;
+import styled from 'styled-components';
+import {
+  fadeInToDown,
+  fadeInToRight,
+  fadeTextSpacing,
+  lineFadeDown,
+} from 'animations';
 
 export const Wrapper = styled.div`
   position: relative;
