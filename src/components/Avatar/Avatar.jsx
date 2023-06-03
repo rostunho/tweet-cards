@@ -13,7 +13,12 @@ export default function Avatar({ style }) {
   return (
     <AvatarWrapper style={style}>
       <CircleIcon style={{ position: 'absolute', zIndex: 10 }} />
-      {userAvatar && <Photo src={testPhoto} alt={userName} />}
+      {userAvatar && (
+        <Photo
+          src="https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/verstappen.jpg.img.1920.medium.jpg/1677069646195.jpg"
+          alt={userName}
+        />
+      )}
       {!userAvatar && (
         <Photo
           src={isRetina ? defaultAvatar2x : defaultAvatar}

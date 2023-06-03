@@ -36,8 +36,9 @@ export const AvatarWrapper = styled.div`
 
 export const Photo = styled.img`
   display: block;
-  width: 80px;
-  height: 80px;
+  width: 72px;
+  height: 72px;
+  margin-top: 8px;
   border-radius: 50%;
   object-fit: cover;
   overflow: hidden;
