@@ -1,13 +1,15 @@
-import { Wrapper, Heading, Text, Greeting } from './Packshot.styled';
+import { Wrapper, Heading, Tweet, Cards, Greeting } from './Packshot.styled';
 
 export default function Packshot() {
   return (
     <Wrapper>
       <Heading>
-        <Text>tweet</Text>
-        <Text>cards</Text>
+        <Tweet>tweet</Tweet>
+        <Cards>cards</Cards>
       </Heading>
-      <Greeting>well come</Greeting>
+      <div>
+        <Greeting>well come</Greeting>
+      </div>
     </Wrapper>
   );
 }
