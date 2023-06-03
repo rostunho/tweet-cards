@@ -1,6 +1,5 @@
-import CircleIcon from 'icons/CircleIcon';
-import testPhoto from 'images/alaska.jpg';
 import { useRetina } from 'hooks/useRetina';
+import CircleIcon from 'icons/CircleIcon';
 import defaultAvatar from 'images/default-avatar.jpg';
 import defaultAvatar2x from 'images/default-avatar@2x.jpg';
 import { AvatarWrapper, Photo } from './Avatar.styled';

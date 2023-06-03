@@ -1,9 +1,9 @@
 import { useRetina } from 'hooks/useRetina';
-import Logo from 'components/Logo/Logo';
-import Avatar from 'components/Avatar/Avatar';
-import Statistic from 'components/Statistic/Statistic';
-import StatsItem from 'components/StatsItem/StatsItem';
-import FollowButton from 'components/FollowButton/FollowButton';
+import Logo from 'components/Logo';
+import Avatar from 'components/Avatar';
+import Statistic from 'components/Statistic';
+import StatsItem from 'components/StatsItem';
+import FollowButton from 'components/FollowButton';
 import { CardContainer, UserInfo } from './TweetCard.styled';
 
 export default function TweetCard() {
