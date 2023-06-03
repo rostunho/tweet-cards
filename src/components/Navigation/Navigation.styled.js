@@ -13,14 +13,12 @@ export const AppNavigation = styled.nav`
     display: block;
     position: absolute;
     left: -120px;
-    width: 108px;
-    height: 8px;
+    width: 8px;
+    height: 108px;
 
     background: #ebd8ff;
-    box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06),
-      inset 0px -1.71846px 3.43693px #ae7be3,
-      inset 0px 3.43693px 2.5777px #fbf8ff;
-    transform: rotate(-90deg);
+    box-shadow: 3.44px 0px 3.43693px rgba(0, 0, 0, 0.06),
+      inset -1.72px 0px 3.43693px #ae7be3, inset 3.44px 0px 2.5777px #fbf8ff;
   }
 `;
 

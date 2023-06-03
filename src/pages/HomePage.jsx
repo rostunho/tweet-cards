@@ -1,3 +1,5 @@
+import Packshot from 'components/Packshot/Packshot';
+
 export default function HomePage() {
-  return <h1>Home Page</h1>;
+  return <Packshot />;
 }
