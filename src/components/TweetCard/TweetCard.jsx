@@ -3,6 +3,7 @@ import Logo from 'components/Logo/Logo';
 import Avatar from 'components/Avatar/Avatar';
 import Statistic from 'components/Statistic/Statistic';
 import StatsItem from 'components/StatsItem/StatsItem';
+import FollowButton from 'components/FollowButton/FollowButton';
 import { CardContainer, UserInfo } from './TweetCard.styled';
 
 export default function TweetCard() {
@@ -17,6 +18,7 @@ export default function TweetCard() {
           <StatsItem data="777" text="tweets" />
           <StatsItem data="100,500" text="followers" />
         </Statistic>
+        <FollowButton style={{ marginTop: '26px' }} />
       </UserInfo>
     </CardContainer>
   );

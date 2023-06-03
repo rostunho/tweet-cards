@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Main = styled.main`
   width: 1280px;
   height: 600px;
-  margin: 12px auto 0;
+  margin: 4px auto 0;
   padding: 20px 40px;
 
   border-radius: 20px;
