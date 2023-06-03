@@ -3,10 +3,7 @@ import img1x from 'images/bg-image.png';
 import img2x from 'images/bg-image@2x.png';
 
 export const CardContainer = styled.div`
-  position: relative;
-
-  /* display: flex;
-  align-items: flex-end; */
+  /* position: relative; */
 
   width: 380px;
   height: 460px;
@@ -33,4 +30,10 @@ export const CardContainer = styled.div`
 
       background-size: 308px 168px, 380px 460px;
     `}
+`;
+
+export const UserInfo = styled.div`
+  position: relative;
+  height: 242px;
+  padding-top: 66px;
 `;

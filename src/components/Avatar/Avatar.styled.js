@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const AvatarWrapper = styled.div`
   position: absolute;
-  left: 0;
+  left: -20px;
+  top: -40px;
   display: flex;
   justify-content: center;
 
