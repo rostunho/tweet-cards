@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 export const Main = styled.main`
   width: 1280px;
-  height: 600px;
+  height: 640px;
   margin: 4px auto 0;
-  padding: 20px 40px;
+  padding: 40px 0;
 
   border-radius: 20px;
 
