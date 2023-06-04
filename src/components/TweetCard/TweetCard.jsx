@@ -1,4 +1,5 @@
 import { useRetina } from 'hooks/useRetina';
+import { toAppNumberFormat } from 'utils/toAppNumberFormat';
 import Logo from 'components/Logo';
 import Avatar from 'components/Avatar';
 import Statistic from 'components/Statistic';
@@ -16,7 +17,10 @@ export default function TweetCard({ user }) {
         <Avatar src={user.avatar} />
         <Statistic style={{ marginTop: '66px' }}>
           <StatsItem data={user.tweets} text="tweets" />
-          <StatsItem data={user.followers} text="followers" />
+          <StatsItem
+            data={toAppNumberFormat(user.followers)}
+            text="followers"
+          />
         </Statistic>
         <FollowButton
           active={user.isFollowedByMe}
