@@ -6,19 +6,22 @@ import StatsItem from 'components/StatsItem';
 import FollowButton from 'components/FollowButton';
 import { CardContainer, UserInfo } from './TweetCard.styled';
 
-export default function TweetCard() {
+export default function TweetCard({ user }) {
   const isRetina = useRetina();
 
   return (
     <CardContainer retina={isRetina}>
       <Logo small />
       <UserInfo style={{ marginTop: '176px' }}>
-        <Avatar />
+        <Avatar src={user.avatar} />
         <Statistic style={{ marginTop: '66px' }}>
-          <StatsItem data="777" text="tweets" />
-          <StatsItem data="100,500" text="followers" />
+          <StatsItem data={user.tweets} text="tweets" />
+          <StatsItem data={user.followers} text="followers" />
         </Statistic>
-        <FollowButton style={{ marginTop: '26px' }} />
+        <FollowButton
+          active={user.isFollowedByMe}
+          style={{ marginTop: '26px' }}
+        />
       </UserInfo>
     </CardContainer>
   );

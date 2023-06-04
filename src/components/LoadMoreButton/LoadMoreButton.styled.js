@@ -22,8 +22,7 @@ export const Button = styled.button`
   text-transform: uppercase;
   color: #373737;
 
-  &:hover,
-  &:focus {
+  &:hover {
     background-image: linear-gradient(
       114.99deg,
       #32ac80 -0.99%,

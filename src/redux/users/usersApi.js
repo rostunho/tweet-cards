@@ -13,7 +13,7 @@ export const usersApi = createApi({
       providesTags: ['Users'],
     }),
     getUsersPage: builder.query({
-      query: ({ page = 1, limit = 3 }) => `/users?page=${page}&limit=${limit}`,
+      query: ({ page, limit }) => `/users?page=${page}&limit=${limit}`,
       providesTags: ['Users'],
     }),
     filterByFollow: builder.query({
