@@ -1,13 +1,13 @@
-import { createSlice } from '@reduxjs/toolkit';
+// import { createSlice } from '@reduxjs/toolkit';
 
-export const usersSlice = createSlice({
-  name: 'users',
-  initialState: {
-    items: [],
-    isLoading: false,
-    error: null,
-  },
-  extraReducers: {},
-});
+// export const usersSlice = createSlice({
+//   name: 'users',
+//   initialState: {
+//     items: [],
+//     isLoading: false,
+//     error: null,
+//   },
+//   extraReducers: {},
+// });
 
-export const usersReducer = usersSlice.reducer;
+// export const usersReducer = usersSlice.reducer;
