@@ -1,19 +1,17 @@
-import TweetCard from 'components/TweetCard/TweetCard';
-
-import { useGetAllUsersQuery } from 'redux/users/usersApi';
+import TweetCard from 'components/TweetCard';
+import LoadMoreButton from 'components/LoadMoreButton';
 
 export default function TweetsPage() {
-  const { data, isLoading, isFetching } = useGetAllUsersQuery();
-
-  console.log('data: ', data);
-  console.log('loading: ', isLoading);
-  console.log('fetching: ', isFetching);
-
   return (
-    <ul style={{ display: 'flex', justifyContent: 'space-between' }}>
-      <TweetCard />
-      <TweetCard />
-      <TweetCard />
-    </ul>
+    <>
+      <ul style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <TweetCard />
+        <TweetCard />
+        <TweetCard />
+      </ul>
+      <LoadMoreButton style={{ margin: '26px auto 0' }}>
+        Load more
+      </LoadMoreButton>
+    </>
   );
 }

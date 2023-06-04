@@ -4,7 +4,7 @@
     "tweets": 777,
     "followers": 623452,
     "avatar": "https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/verstappen.jpg.img.1920.medium.jpg/1677069646195.jpg",
-    "id": 1,
+    "id": "1",
     "isFollowedByMe": false
   },
   {
@@ -12,7 +12,7 @@
     "tweets": 402,
     "followers": 340530,
     "avatar": "https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/perez.jpg.img.1920.medium.jpg/1677069773437.jpg",
-    "id": 2,
+    "id": "2",
     "isFollowedByMe": false
   },
   {
@@ -20,15 +20,15 @@
     "tweets": 803,
     "followers": 605221,
     "avatar": "https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/leclerc.jpg.img.1920.medium.jpg/1677069223130.jpg",
-    "id": 3,
-    "isFollowedByMe": false
+    "id": "3",
+    "isFollowedByMe": true
   },
   {
     "user": "Carlos Sainz",
     "tweets": 506,
     "followers": 570440,
     "avatar": "https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/sainz.jpg.img.1920.medium.jpg/1677069189406.jpg",
-    "id": 4,
+    "id": "4",
     "isFollowedByMe": false
   },
   {
@@ -36,7 +36,7 @@
     "tweets": 984,
     "followers": 1022358,
     "avatar": "https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/hamilton.jpg.img.1920.medium.jpg/1677069594164.jpg",
-    "id": 5,
+    "id": "5",
     "isFollowedByMe": false
   },
   {
@@ -44,15 +44,15 @@
     "tweets": 573103,
     "followers": 468321,
     "avatar": "https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/russell.jpg.img.1920.medium.jpg/1677069334466.jpg",
-    "id": 6,
-    "isFollowedByMe": false
+    "id": "6",
+    "isFollowedByMe": true
   },
   {
     "user": "Fernando Alonso",
     "tweets": 320,
     "followers": 630344,
     "avatar": "https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/alonso.jpg.img.1920.medium.jpg/1677244577162.jpg",
-    "id": 7,
+    "id": "7",
     "isFollowedByMe": false
   },
   {
@@ -60,7 +60,7 @@
     "tweets": 457,
     "followers": 114097,
     "avatar": "https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/stroll.jpg.img.1920.medium.jpg/1677069453013.jpg",
-    "id": 8,
+    "id": "8",
     "isFollowedByMe": false
   },
   {
@@ -68,7 +68,7 @@
     "tweets": 471,
     "followers": 420321,
     "avatar": "https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/gasly.jpg.img.1920.medium.jpg/1676983081984.jpg",
-    "id": 9,
+    "id": "9",
     "isFollowedByMe": false
   },
   {
@@ -76,7 +76,7 @@
     "tweets": 488,
     "followers": 372113,
     "avatar": "https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/ocon.jpg.img.1920.medium.jpg/1677069269007.jpg",
-    "id": 10,
+    "id": "10",
     "isFollowedByMe": false
   },
   {
@@ -84,15 +84,15 @@
     "tweets": 1004,
     "followers": 590355,
     "avatar": "https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/norris.jpg.img.1920.medium.jpg/1677069505471.jpg",
-    "id": 11,
-    "isFollowedByMe": false
+    "id": "11",
+    "isFollowedByMe": true
   },
   {
     "user": "Oscar Piastri",
     "tweets": 222,
     "followers": 92101,
     "avatar": "https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/piastri.jpg.img.1920.medium.jpg/1676983075734.jpg",
-    "id": 12,
+    "id": "12",
     "isFollowedByMe": false
   },
   {
@@ -100,7 +100,7 @@
     "tweets": 391,
     "followers": 184205,
     "avatar": "https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/tsunoda.jpg.img.1920.medium.jpg/1677069846213.jpg",
-    "id": 13,
+    "id": "13",
     "isFollowedByMe": false
   },
   {
@@ -108,7 +108,7 @@
     "tweets": 171,
     "followers": 14009,
     "avatar": "https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/devries.jpg.img.1920.medium.jpg/1676983081637.jpg",
-    "id": 14,
+    "id": "14",
     "isFollowedByMe": false
   },
   {
@@ -116,7 +116,7 @@
     "tweets": 402,
     "followers": 4507176,
     "avatar": "https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/bottas.jpg.img.1920.medium.jpg/1677069810695.jpg",
-    "id": 15,
+    "id": "15",
     "isFollowedByMe": false
   },
   {
@@ -124,7 +124,7 @@
     "tweets": 211,
     "followers": 81230,
     "avatar": "https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/zhou.jpg.img.1920.medium.jpg/1677069909295.jpg",
-    "id": 16,
+    "id": "16",
     "isFollowedByMe": false
   },
   {
@@ -132,7 +132,7 @@
     "tweets": 394,
     "followers": 210124,
     "avatar": "https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/magnussen.jpg.img.1920.medium.jpg/1677069387823.jpg",
-    "id": 17,
+    "id": "17",
     "isFollowedByMe": false
   },
   {
@@ -140,7 +140,7 @@
     "tweets": 719,
     "followers": 430981,
     "avatar": "https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/hulkenberg.jpg.img.1920.medium.jpg/1676983071882.jpg",
-    "id": 18,
+    "id": "18",
     "isFollowedByMe": false
   },
   {
@@ -148,7 +148,7 @@
     "tweets": 430,
     "followers": 372814,
     "avatar": "https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/albon.jpg.img.1920.medium.jpg/1677068770293.jpg",
-    "id": 19,
+    "id": "19",
     "isFollowedByMe": false
   },
   {
@@ -156,7 +156,7 @@
     "tweets": 430,
     "followers": 372814,
     "avatar": "https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/sargeant.jpg.img.1920.medium.jpg/1676983079144.jpg",
-    "id": 20,
+    "id": "20",
     "isFollowedByMe": false
   }
 ]

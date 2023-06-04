@@ -12,7 +12,29 @@ export const usersApi = createApi({
       query: () => '/users',
       providesTags: ['Users'],
     }),
+    getUsersPage: builder.query({
+      query: ({ page = 1, limit = 3 }) => `/users?page=${page}&limit=${limit}`,
+      providesTags: ['Users'],
+    }),
+    filterByFollow: builder.query({
+      query: boolean => `/users?isFollowedByMe=${boolean}`,
+      providesTags: ['Users'],
+    }),
+    updateStatus: builder.mutation({
+      query: ({ id, body }) => ({
+        url: `/users/${id}`,
+        headers: { 'Content-Type': 'application/json' },
+        method: 'PUT', //it is mockapi specific
+        body,
+      }),
+      invalidatesTags: ['Users'],
+    }),
   }),
 });
 
-export const { useGetAllUsersQuery } = usersApi;
+export const {
+  useGetAllUsersQuery,
+  useFilterByFollowQuery,
+  useGetUsersPageQuery,
+  useUpdateStatusMutation,
+} = usersApi;
