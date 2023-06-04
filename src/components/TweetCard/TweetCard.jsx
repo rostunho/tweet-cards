@@ -1,3 +1,4 @@
+import { useUpdateUserMutation } from 'redux/users/usersApi';
 import { useRetina } from 'hooks/useRetina';
 import { toAppNumberFormat } from 'utils/toAppNumberFormat';
 import Logo from 'components/Logo';
@@ -9,6 +10,19 @@ import { CardContainer, UserInfo } from './TweetCard.styled';
 
 export default function TweetCard({ user }) {
   const isRetina = useRetina();
+  const [updateUserStatus, result] = useUpdateUserMutation();
+
+  const toggleUserStatus = (id, status) => {
+    updateUserStatus({
+      id: id,
+      body: {
+        isFollowedByMe: !user.isFollowedByMe,
+        followers: user.isFollowedByMe
+          ? user.followers - 1
+          : user.followers + 1,
+      },
+    });
+  };
 
   return (
     <CardContainer retina={isRetina}>
@@ -25,6 +39,7 @@ export default function TweetCard({ user }) {
         <FollowButton
           active={user.isFollowedByMe}
           style={{ marginTop: '26px' }}
+          onClick={() => toggleUserStatus(user.id)}
         />
       </UserInfo>
     </CardContainer>

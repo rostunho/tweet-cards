@@ -20,15 +20,21 @@ export const usersApi = createApi({
       query: boolean => `/users?isFollowedByMe=${boolean}`,
       providesTags: ['Users'],
     }),
-    updateStatus: builder.mutation({
+    updateUser: builder.mutation({
       query: ({ id, body }) => ({
         url: `/users/${id}`,
-        headers: { 'Content-Type': 'application/json' },
         method: 'PUT', //it is mockapi specific
         body,
       }),
       invalidatesTags: ['Users'],
     }),
+    // handleFollowers: builder.mutation({
+    //   query: ({ id, body }) => ({
+    //     url: `/users/${id}`,
+    //     method: 'PUT', //it is mockapi specific
+    //     body,
+    //   }),
+    // }),
   }),
 });
 
@@ -36,5 +42,5 @@ export const {
   useGetAllUsersQuery,
   useFilterByFollowQuery,
   useGetUsersPageQuery,
-  useUpdateStatusMutation,
+  useUpdateUserMutation,
 } = usersApi;

@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Button } from './FollowButton.styled';
 
 export default function FollowButton({ active, style, onClick }) {
