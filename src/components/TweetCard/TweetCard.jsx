@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 import { useUpdateUserMutation } from 'redux/users/usersApi';
 import { useRetina } from 'hooks/useRetina';
 import { toAppNumberFormat } from 'utils/toAppNumberFormat';
@@ -14,10 +13,6 @@ export default function TweetCard({ user }) {
   const isRetina = useRetina();
   const [currentUser, setCurrentUser] = useState(user);
   const [updateUserStatus, { data }] = useUpdateUserMutation(currentUser.id);
-  const dispatch = useDispatch();
-
-  // dispatch(usersApi.util.resetApiState());
-  // dispatch(api.util.invalidateTags(['CompanySettings'])
 
   useEffect(() => {
     data && setCurrentUser(data);
