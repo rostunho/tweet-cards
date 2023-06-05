@@ -15,21 +15,17 @@ export default function CardsGallery() {
   const { data: refreshingData } = useGetRefreshingUsersQuery({ page });
   const [cards, setCards] = useState(refreshingData);
 
-  const { data } = useGetUsersPageQuery(page);
+  const { data, isSuccess } = useGetUsersPageQuery(page);
   const autoScroll = useRef(null);
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   setCards(refreshingData);
-  // }, []);
+  useEffect(() => {
+    scrollToBottom(autoScroll);
+  }, [cards]);
 
   useEffect(() => {
     setCards(data);
-    scrollToBottom(autoScroll);
   }, [data, refreshingData]);
-
-  console.log('data: ', data);
-  console.log('refreshingData: ', refreshingData);
 
   return (
     <>
@@ -47,6 +43,7 @@ export default function CardsGallery() {
         style={{ marginTop: '40px' }}
         onClick={() => {
           dispatch(updatePageAction(1));
+          // isSuccess && scrollToBottom(autoScroll);
         }}
       />
     </>
