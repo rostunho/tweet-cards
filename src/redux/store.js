@@ -22,7 +22,9 @@ export const store = configureStore({
     page: persistedPageReducer,
   },
   middleware: getDefaultMiddleware => [
-    ...getDefaultMiddleware(),
+    ...getDefaultMiddleware({
+      serializableCheck: false,
+    }),
     usersApi.middleware,
   ],
 });

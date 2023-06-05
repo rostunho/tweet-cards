@@ -5,11 +5,15 @@ export const usersApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://647b84b0d2e5b6101db16495.mockapi.io/api/v1',
   }),
-  tagTypes: ['Users'],
+  tagTypes: ['Users', 'Following'],
 
   endpoints: builder => ({
     getAllUsers: builder.query({
       query: () => '/users',
+      providesTags: ['Users'],
+    }),
+    getSingleUser: builder.query({
+      query: id => `/users/${id}`,
       providesTags: ['Users'],
     }),
     getUsersPage: builder.query({
@@ -21,8 +25,6 @@ export const usersApi = createApi({
         currentCache.push(...newItems);
       },
       forceRefetch({ currentArg, previousArg }) {
-        console.log('currentArg: ', currentArg);
-        console.log('previousArg: ', previousArg);
         return currentArg !== previousArg;
       },
       providesTags: ['Users'],
@@ -37,7 +39,7 @@ export const usersApi = createApi({
         method: 'PUT', //it is mockapi specific
         body,
       }),
-      invalidatesTags: ['Users'],
+      // invalidatesTags: ['Following'],
     }),
   }),
 });
@@ -46,5 +48,6 @@ export const {
   useGetAllUsersQuery,
   useFilterByFollowQuery,
   useGetUsersPageQuery,
+  useGetSingleUserQuery,
   useUpdateUserMutation,
 } = usersApi;

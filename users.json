@@ -158,5 +158,13 @@
     "avatar": "https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/sargeant.jpg.img.1920.medium.jpg/1676983079144.jpg",
     "id": "20",
     "isFollowedByMe": false
+  },
+  {
+    "user": "Mick Schumacher",
+    "tweets": 230,
+    "followers": 391247,
+    "avatar": "https://media.formula1.com/content/dam/fom-website/drivers/2022Drivers/schumacher.jpg.img.1920.medium.jpg/1677069646195.jpg",
+    "id": "20",
+    "isFollowedByMe": false
   }
 ]

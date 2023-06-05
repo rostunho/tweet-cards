@@ -1,4 +1,6 @@
-import { useUpdateUserMutation } from 'redux/users/usersApi';
+import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { useUpdateUserMutation, usersApi } from 'redux/users/usersApi';
 import { useRetina } from 'hooks/useRetina';
 import { toAppNumberFormat } from 'utils/toAppNumberFormat';
 import Logo from 'components/Logo';
@@ -10,16 +12,24 @@ import { CardContainer, UserInfo } from './TweetCard.styled';
 
 export default function TweetCard({ user }) {
   const isRetina = useRetina();
-  const [updateUserStatus, result] = useUpdateUserMutation();
+  const [currentUser, setCurrentUser] = useState(user);
+  const [updateUserStatus, { data }] = useUpdateUserMutation(currentUser.id);
+  const dispatch = useDispatch();
+
+  // dispatch(usersApi.util.resetApiState());
+
+  useEffect(() => {
+    data && setCurrentUser(data);
+  }, [data]);
 
   const toggleUserStatus = () => {
     updateUserStatus({
-      id: user.id,
+      id: currentUser.id,
       body: {
-        isFollowedByMe: !user.isFollowedByMe,
-        followers: user.isFollowedByMe
-          ? user.followers - 1
-          : user.followers + 1,
+        isFollowedByMe: !currentUser.isFollowedByMe,
+        followers: currentUser.isFollowedByMe
+          ? currentUser.followers - 1
+          : currentUser.followers + 1,
       },
     });
   };
@@ -28,16 +38,16 @@ export default function TweetCard({ user }) {
     <CardContainer retina={isRetina}>
       <Logo small />
       <UserInfo style={{ marginTop: '176px' }}>
-        <Avatar src={user.avatar} />
+        <Avatar src={currentUser.avatar} />
         <Statistic style={{ marginTop: '66px' }}>
-          <StatsItem data={user.tweets} text="tweets" />
+          <StatsItem data={currentUser.tweets} text="tweets" />
           <StatsItem
-            data={toAppNumberFormat(user.followers)}
+            data={toAppNumberFormat(currentUser.followers)}
             text="followers"
           />
         </Statistic>
         <FollowButton
-          active={user.isFollowedByMe}
+          active={currentUser.isFollowedByMe}
           style={{ marginTop: '26px' }}
           onClick={toggleUserStatus}
         />
