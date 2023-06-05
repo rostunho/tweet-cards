@@ -16,6 +16,7 @@ export default function CardsGallery() {
     useGetRefreshingUsersQuery({ page });
   const [cards, setCards] = useState(refreshingData);
   const { data } = useGetUsersPageQuery({ page });
+  const [buttonDisabled, setButtonDisabled] = useState(false);
   const autoScroll = useRef(null);
   const dispatch = useDispatch();
 
@@ -26,6 +27,10 @@ export default function CardsGallery() {
   useEffect(() => {
     setCards(data);
   }, [data, refreshingData]);
+
+  useEffect(() => {
+    cards && setButtonDisabled(cards.length > 19);
+  }, [cards]);
 
   const updatePage = () => {
     dispatch(updatePageAction(1));
@@ -46,6 +51,7 @@ export default function CardsGallery() {
         text="load more"
         style={{ marginTop: '40px' }}
         onClick={updatePage}
+        disabled={buttonDisabled}
       />
     </div>
   );
