@@ -19,15 +19,46 @@ export const usersApi = createApi({
     getUsersPage: builder.query({
       query: page => `/users?page=${page}&limit=3`,
       serializeQueryArgs: ({ endpointName }) => {
+        console.log('endpointName: ', endpointName);
         return endpointName;
       },
       merge: (currentCache, newItems) => {
-        currentCache.push(...newItems);
+        console.log('CURRENT CACHE: ', currentCache[0].id);
+        console.log('NEWITEMS: currentCache', newItems[0].id);
+
+        const duplication = currentCache.find(
+          user => user.id === newItems[0].id
+        );
+        console.log('F I N D :', duplication);
+        !duplication && currentCache.push(...newItems);
       },
-      forceRefetch({ currentArg, previousArg }) {
+      forceRefetch({ currentArg, previousArg, state, endpointState }) {
+        console.log('currentArg: ', currentArg);
+        console.log('previousArg: ', previousArg);
+        console.log('state: ', state);
+        console.log('endpointState: ', endpointState);
+
+        if (!previousArg || !endpointState) {
+          return false;
+        }
+
         return currentArg !== previousArg;
       },
-      providesTags: ['Users'],
+      providesTags: (result, error, arg) =>
+        // result
+        //   ? [...result.map(({ id }) => ({ type: 'Users', id })), 'Users']
+        //   : ['Users'],
+        {
+          console.log('results before: ', result);
+          if (result) {
+            return [
+              ...result.map(({ id }) => ({ type: 'Users', id: Number(id) })),
+              'Users',
+            ];
+          }
+          console.log('results after: ', result);
+          return ['Users'];
+        },
     }),
     filterByFollow: builder.query({
       query: boolean => `/users?isFollowedByMe=${boolean}`,
@@ -39,7 +70,10 @@ export const usersApi = createApi({
         method: 'PUT', //it is mockapi specific
         body,
       }),
-      // invalidatesTags: ['Following'],
+      invalidatesTags: (result, error, arg) => {
+        console.log('arg id: ', arg.id);
+        return [{ type: 'Users', id: arg.id }];
+      },
     }),
   }),
 });
