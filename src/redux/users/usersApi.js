@@ -21,7 +21,7 @@ export const usersApi = createApi({
       providesTags: ['Users'],
     }),
     getUsersPage: builder.query({
-      query: page => `/users?page=${page}&limit=3`,
+      query: ({ page, limit = 3 }) => `/users?page=${page}&limit=${limit}`,
       serializeQueryArgs: ({ endpointName }) => {
         return endpointName;
       },

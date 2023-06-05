@@ -8,13 +8,15 @@ import { updatePageAction } from 'redux/page/actions';
 import { scrollToBottom } from 'utils/scrollToBottom';
 import TweetCard from 'components/TweetCard';
 import LoadMoreButton from 'components/LoadMoreButton';
+import Spinner from 'components/Spinner/Spinner';
 import { List } from './CardsGallery.styled';
 
 export default function CardsGallery() {
   const page = useSelector(state => state.page.current);
-  const { data: refreshingData } = useGetRefreshingUsersQuery({ page });
+  const { data: refreshingData, isFetching: isFetchingRefresh } =
+    useGetRefreshingUsersQuery({ page });
   const [cards, setCards] = useState(refreshingData);
-  const { data } = useGetUsersPageQuery(page);
+  const { data, isFetching: isFetchingData } = useGetUsersPageQuery({ page });
   const autoScroll = useRef(null);
   const dispatch = useDispatch();
 
@@ -31,7 +33,7 @@ export default function CardsGallery() {
   };
 
   return (
-    <>
+    <div style={{ position: 'relative' }}>
       <List>
         {cards &&
           cards.map(user => (
@@ -46,6 +48,7 @@ export default function CardsGallery() {
         style={{ marginTop: '40px' }}
         onClick={updatePage}
       />
-    </>
+      {isFetchingRefresh || (isFetchingData && <Spinner />)}
+    </div>
   );
 }

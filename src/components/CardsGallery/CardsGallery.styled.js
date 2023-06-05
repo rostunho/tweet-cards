@@ -36,6 +36,6 @@ export const List = styled.ul`
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    background: blue;
+    background: #5cd3a8;
   }
 `;
