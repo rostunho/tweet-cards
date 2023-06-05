@@ -39,13 +39,6 @@ export const usersApi = createApi({
       }),
       invalidatesTags: ['Users'],
     }),
-    // handleFollowers: builder.mutation({
-    //   query: ({ id, body }) => ({
-    //     url: `/users/${id}`,
-    //     method: 'PUT', //it is mockapi specific
-    //     body,
-    //   }),
-    // }),
   }),
 });
 

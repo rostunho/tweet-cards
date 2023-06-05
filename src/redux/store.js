@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { usersApi } from './users/usersApi';
-import { cardsReducer } from './current-page/reducer';
+import { cardsReducer } from './page/reducer';
 import { setupListeners } from '@reduxjs/toolkit/dist/query';
 
 export const store = configureStore({

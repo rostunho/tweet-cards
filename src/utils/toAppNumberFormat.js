@@ -1,4 +1,4 @@
-export function toAppNumberFormat(number) {
+export const toAppNumberFormat = number => {
   const string = number.toString();
   let formattedString = '';
 
@@ -13,4 +13,4 @@ export function toAppNumberFormat(number) {
   }
 
   return formattedString;
-}
+};

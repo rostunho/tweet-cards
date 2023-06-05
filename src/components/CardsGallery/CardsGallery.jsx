@@ -1,19 +1,21 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useGetUsersPageQuery } from 'redux/users/usersApi';
-// import { updateCardsAction, updatePageAction } from 'redux/cards/actions';
+import { updatePageAction } from 'redux/page/actions';
+import { scrollToBottom } from 'utils/scrollToBottom';
 import TweetCard from 'components/TweetCard';
 import LoadMoreButton from 'components/LoadMoreButton';
 import { List } from './CardsGallery.styled';
-import { updatePageAction } from 'redux/current-page/actions';
 
 export default function CardsGallery() {
   const page = useSelector(state => state.page.current);
   const { data } = useGetUsersPageQuery(page);
+  const autoScroll = useRef(null);
   const dispatch = useDispatch();
 
-  console.log('page: ', page);
-  console.log('data: ', data);
+  useEffect(() => {
+    scrollToBottom(autoScroll);
+  }, [data]);
 
   return (
     <>
@@ -24,6 +26,7 @@ export default function CardsGallery() {
               <TweetCard user={user} />
             </li>
           ))}
+        <li ref={autoScroll} />
       </List>
       <LoadMoreButton
         text="load more"
