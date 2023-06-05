@@ -23,14 +23,45 @@ export const usersApi = createApi({
         return endpointName;
       },
       merge: (currentCache, newItems) => {
-        console.log('CURRENT CACHE: ', currentCache[0].id);
+        console.log('CURRENT CACHE: ', currentCache);
         console.log('NEWITEMS: currentCache', newItems[0].id);
 
         const duplication = currentCache.find(
           user => user.id === newItems[0].id
         );
         console.log('F I N D :', duplication);
-        !duplication && currentCache.push(...newItems);
+        // !duplication && currentCache.push(...newItems);
+        // currentCache.push(...newItems);
+
+        // let updatedArray = initialArray.reduce(function (acc, element) {
+        //   let matchingElement = newArray.find(function (newElement) {
+        //     return element.id === newElement.id;
+        //   });
+
+        //   acc.push(matchingElement ? matchingElement : element);
+        //   return acc;
+        // }, []);
+
+        if (!duplication) {
+          currentCache.push(...newItems);
+        } else {
+          const updatedCache = currentCache.reduce((acc, user, idx) => {
+            const matchingUser = newItems.find(newUser => {
+              return user.id === newUser.id ? newUser : false;
+            });
+
+            acc.push(matchingUser ? matchingUser : user);
+            console.log('acc: ', acc[4]);
+            return acc;
+          }, []);
+
+          currentCache.splice(0, currentCache.length);
+          currentCache.push(...updatedCache);
+          // console.log('Updated CACHE: ', updatedCache);
+          console.log('Current Cache before splicing: ', currentCache.length);
+          // currentCache.splice(0, currentCache.length).push(...updatedCache);
+          // console.log('Current Cache after splice: ', currentCache);
+        }
       },
       forceRefetch({ currentArg, previousArg, state, endpointState }) {
         console.log('currentArg: ', currentArg);
