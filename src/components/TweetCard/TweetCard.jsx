@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { useUpdateUserMutation, usersApi } from 'redux/users/usersApi';
+import { useUpdateUserMutation } from 'redux/users/usersApi';
 import { useRetina } from 'hooks/useRetina';
 import { toAppNumberFormat } from 'utils/toAppNumberFormat';
 import Logo from 'components/Logo';
@@ -17,6 +17,7 @@ export default function TweetCard({ user }) {
   const dispatch = useDispatch();
 
   // dispatch(usersApi.util.resetApiState());
+  // dispatch(api.util.invalidateTags(['CompanySettings'])
 
   useEffect(() => {
     data && setCurrentUser(data);
