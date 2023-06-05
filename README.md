@@ -67,4 +67,4 @@ This project is licensed under the
 
 For any questions or inquiries, please contact the project owner:
 
-Rostyk Podolets\ Email: ros.podolets@gmail.com
+Rostyk Podolets <br/>git Email: ros.podolets@gmail.com
