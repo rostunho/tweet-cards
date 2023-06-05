@@ -34,16 +34,4 @@ export const Spin = styled.div`
   animation-duration: 0.75s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-
-  /* &--small {
-    top: 35%;
-    left: 50%;
-    width: 100px;
-    height: 100px;
-    border: 10px solid transparent;
-    border-top: 10px solid rgb(0, 0, 0, 0.3);
-    border-left: 10px solid rgb(0, 0, 0, 0.3);
-    border-bottom: 10px solid rgb(0, 0, 0, 0.3);
-    border-right: 10px solid $accentColor;
-  } */
 `;
