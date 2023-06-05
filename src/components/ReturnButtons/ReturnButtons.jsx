@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 import GoBackIcon from 'icons/GoBackIcon';
 import RefreshIcon from 'icons/RefreshIcon';
 import { List, Button } from './ReturnButtons.styled';
