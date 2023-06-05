@@ -14,7 +14,6 @@ export default function CardsGallery() {
   const page = useSelector(state => state.page.current);
   const { data: refreshingData } = useGetRefreshingUsersQuery({ page });
   const [cards, setCards] = useState(refreshingData);
-
   const { data } = useGetUsersPageQuery(page);
   const autoScroll = useRef(null);
   const dispatch = useDispatch();

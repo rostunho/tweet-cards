@@ -13,7 +13,7 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <BrowserRouter basename="/tweet-cards">
+        <BrowserRouter>
           <App />
         </BrowserRouter>
       </PersistGate>
