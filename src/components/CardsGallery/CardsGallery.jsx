@@ -15,7 +15,7 @@ export default function CardsGallery() {
   const { data: refreshingData } = useGetRefreshingUsersQuery({ page });
   const [cards, setCards] = useState(refreshingData);
 
-  const { data, isSuccess } = useGetUsersPageQuery(page);
+  const { data } = useGetUsersPageQuery(page);
   const autoScroll = useRef(null);
   const dispatch = useDispatch();
 
@@ -26,6 +26,10 @@ export default function CardsGallery() {
   useEffect(() => {
     setCards(data);
   }, [data, refreshingData]);
+
+  const updatePage = () => {
+    dispatch(updatePageAction(1));
+  };
 
   return (
     <>
@@ -41,10 +45,7 @@ export default function CardsGallery() {
       <LoadMoreButton
         text="load more"
         style={{ marginTop: '40px' }}
-        onClick={() => {
-          dispatch(updatePageAction(1));
-          // isSuccess && scrollToBottom(autoScroll);
-        }}
+        onClick={updatePage}
       />
     </>
   );
