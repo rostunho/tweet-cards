@@ -18,26 +18,26 @@ design of the card and generate the corresponding image.
 
 To use Tweet Cards locally, follow these steps:
 
-1. ### Clone the repository:
+1. #### Clone the repository:
 
-   ```bash
-   git clone https://github.com/rostunho/tweet-cards.git
-   ```
+```bash
+git clone https://github.com/rostunho/tweet-cards.git
+```
 
-2. ### Install the required dependencies:
+2. #### Install the required dependencies:
 
 ```bash
 cd tweet-cards
 npm install
 ```
 
-3. ### Start the development server:
+3. #### Start the development server:
 
 ```bash
 npm start
 ```
 
-4. ### Open your web browser and visit http://localhost:3000 to access Tweet Cards.
+4. #### Open your web browser and visit http://localhost:3000 to access Tweet Cards.
 
 ## Contributing:
 
