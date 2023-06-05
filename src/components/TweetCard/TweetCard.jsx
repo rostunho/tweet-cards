@@ -12,9 +12,9 @@ export default function TweetCard({ user }) {
   const isRetina = useRetina();
   const [updateUserStatus, result] = useUpdateUserMutation();
 
-  const toggleUserStatus = (id, status) => {
+  const toggleUserStatus = () => {
     updateUserStatus({
-      id: id,
+      id: user.id,
       body: {
         isFollowedByMe: !user.isFollowedByMe,
         followers: user.isFollowedByMe
@@ -39,7 +39,7 @@ export default function TweetCard({ user }) {
         <FollowButton
           active={user.isFollowedByMe}
           style={{ marginTop: '26px' }}
-          onClick={() => toggleUserStatus(user.id)}
+          onClick={toggleUserStatus}
         />
       </UserInfo>
     </CardContainer>
