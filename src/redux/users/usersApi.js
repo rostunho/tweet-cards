@@ -13,7 +13,18 @@ export const usersApi = createApi({
       providesTags: ['Users'],
     }),
     getUsersPage: builder.query({
-      query: ({ page, limit }) => `/users?page=${page}&limit=${limit}`,
+      query: page => `/users?page=${page}&limit=3`,
+      serializeQueryArgs: ({ endpointName }) => {
+        return endpointName;
+      },
+      merge: (currentCache, newItems) => {
+        currentCache.push(...newItems);
+      },
+      forceRefetch({ currentArg, previousArg }) {
+        console.log('currentArg: ', currentArg);
+        console.log('previousArg: ', previousArg);
+        return currentArg !== previousArg;
+      },
       providesTags: ['Users'],
     }),
     filterByFollow: builder.query({

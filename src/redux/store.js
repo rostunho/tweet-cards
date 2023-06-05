@@ -1,12 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { usersApi } from './users/usersApi';
-import { cardsReducer } from './cards/reducer';
+import { cardsReducer } from './current-page/reducer';
 import { setupListeners } from '@reduxjs/toolkit/dist/query';
 
 export const store = configureStore({
   reducer: {
     [usersApi.reducerPath]: usersApi.reducer,
-    cards: cardsReducer,
+    page: cardsReducer,
   },
   middleware: getDefaultMiddleware => [
     ...getDefaultMiddleware(),
